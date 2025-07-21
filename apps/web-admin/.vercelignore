@@ -1,0 +1,5 @@
+# Ignore monorepo files from parent directories
+../../node_modules
+../../turbo.json
+../../pnpm-lock.yaml
+../../pnpm-workspace.yaml

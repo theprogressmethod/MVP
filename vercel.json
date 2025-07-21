@@ -1,0 +1,11 @@
+{
+  "buildCommand": "cd apps/web-admin && npm install && npm run build",
+  "outputDirectory": "apps/web-admin/.next",
+  "installCommand": "npm install",
+  "framework": null,
+  "functions": {
+    "apps/web-admin/src/app/**": {
+      "runtime": "nodejs18.x"
+    }
+  }
+}
