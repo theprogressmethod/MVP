@@ -1,0 +1,32 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir:*)",
+      "Bash(supabase init:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(pnpm install:*)",
+      "Bash(npm install:*)",
+      "Bash(brew install:*)",
+      "Bash(supabase:*)",
+      "Bash(curl:*)",
+      "Bash(tar:*)",
+      "Bash(sudo mv:*)",
+      "Bash(chmod:*)",
+      "Bash(~/bin/supabase:*)",
+      "Bash(rm:*)",
+      "Bash(find:*)",
+      "Bash(cp:*)",
+      "Bash(pnpm dev:*)",
+      "Bash(gh repo create:*)",
+      "Bash(gh auth:*)",
+      "Bash(git remote add:*)",
+      "Bash(git push:*)",
+      "Bash(git remote set-url:*)",
+      "Bash(git fetch:*)",
+      "Bash(git pull:*)",
+      "Bash(git config:*)"
+    ],
+    "deny": []
+  }
+}
