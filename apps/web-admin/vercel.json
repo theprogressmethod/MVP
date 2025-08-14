@@ -2,10 +2,5 @@
   "framework": null,
   "buildCommand": "npm install && npm run build",
   "installCommand": null,
-  "outputDirectory": ".next",
-  "functions": {
-    "src/app/**/*.ts": {
-      "runtime": "nodejs18.x"
-    }
-  }
+  "outputDirectory": ".next"
 }
