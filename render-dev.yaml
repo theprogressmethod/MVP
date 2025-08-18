@@ -1,0 +1,57 @@
+services:
+  - type: web
+    name: progress-method-dev
+    env: node
+    region: oregon
+    plan: free
+    buildCommand: cd apps/web-admin && npm install && npm run build
+    startCommand: cd apps/web-admin && npm start
+    healthCheckPath: /
+    envVars:
+      - key: NODE_ENV
+        value: development
+      - key: NEXT_PUBLIC_ENV
+        value: development
+      - key: NEXT_PUBLIC_SUPABASE_URL
+        sync: false
+      - key: NEXT_PUBLIC_SUPABASE_ANON_KEY
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
+    autoDeploy: true
+    branch: dev
+    rootDir: ./
+    buildFilter:
+      paths:
+        - apps/web-admin/**
+        - package.json
+        - package-lock.json
+
+  # Optional: N8N automation for development
+  - type: web
+    name: n8n-automation-dev
+    env: docker
+    region: oregon
+    plan: free
+    dockerfilePath: ./Dockerfile.n8n
+    healthCheckPath: /healthz
+    envVars:
+      - key: NODE_ENV
+        value: development
+      - key: N8N_HOST
+        value: 0.0.0.0
+      - key: N8N_PORT
+        value: 5678
+      - key: N8N_PROTOCOL
+        value: https
+      - key: WEBHOOK_URL
+        sync: false
+      - key: N8N_ENCRYPTION_KEY
+        sync: false
+      - key: DB_TYPE
+        value: sqlite
+      - key: DATA_FOLDER
+        value: /home/node/.n8n
+    autoDeploy: true
+    branch: dev
+    rootDir: ./
